@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<head>  <title> Assignment 8</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body onload="SearchIsOn(); setenable(); setdisable(); retainValues();">
+
+<center><fieldset style="width: 600px;">
+   
+<div class="panel panel-default">
+    <div class="panel-body">
+
+    <h2><i>Travel and Entertainment Search</i></h2><hr>
+
+<div class="form-group">
+      <label class="control-label col-sm-2" for="keyword">Keyword</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="keyword" name="keyword">
+      </div>
+
+      <br><br><br>
+
+
+    <label class="control-label col-sm-2" for="email"><b>Category</b> </label>
+        <div class="col-sm-6">   <select class="form-control" name="category" id="category">
+                 <option value="default">Default</option>
+  <option value="airport" name="category">Airport</option>
+  <option value="amusement_park" name="category">Amusement Park</option>
+  <option value="aquarium" name="category">Aquarium</option>
+  <option value="art_gallery" name="category">Art Gallery</option>
+  <option value="bakery" name="category">Bakery</option>
+  <option value="bar" name="category">Bar</option>
+  <option value="beauty_salon" name="category">Beauty Salon</option>
+  <option value="bowling_alley" name="category">Bowling Alley</option>
+  <option value="bus_station" name="category">Bus Station</option>
+  <option value="cafe">Cafe</option>
+  <option value="campground" name="category">Campground</option>
+  <option value="car_rental" name="category">Car Rental</option>
+  <option value="casino" name="category">Casino</option>
+  <option value="lodging" name="category">Lodging</option>
+  <option value="movie_theater" name="category">Movie Theater</option>
+  <option value="museum" name="category">Museum</option>
+  <option value="night_club" name="category">Night Club</option>
+  <option value="park" name="category">Park</option>
+  <option value="parking" name="category">Parking</option>      
+  <option value="restaurant" name="category">Restaurant</option>
+  <option value="shopping_mall" name="category">Shopping Mall</option>
+  <option value="stadium" name="category">Stadium</option>
+  <option value="subway_station" name="category">Subway Station</option>
+  <option value="taxi_stand" name="category">Taxi Stand</option>
+  <option value="train_station" name="category">Train Station</option>
+  <option value="transit_station" name="category">Transit Station</option>
+  <option value="travel_agency" name="category">Travel Agency</option>
+  <option value="zoo" name="category">Zoo</option>
+    
+            </select> </div>
+
+
+    <br><br><br>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3" for="distance">Distance (miles)</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="distance" name="keyword" placeholder="10">
+      </div>
+
+      <br><br>
+
+
+      <div class="form-group">
+      <div class ="row">
+      <label class="col-sm-2" for="distance">From</label>
+      <div class ="col-sm-5"><input type="radio" id="location1" name="location" checked="checked" value="here" onclick="setdisable()"> &nbsp;Current Location </div>
+       
+
+       <div class="form-group">
+      <div class ="row">
+       
+      <input id="hidden_here_location" name="hidden_here_locale" type="hidden" > 
+      <br>
+       <div class ="col-sm-5"> <input type="radio" id="location2" name="location" value="user_entered_location" onclick="setenable()"> &nbsp;Other. Please specify:
+         <div class="form-group">
+      <label class="control-label col-sm-3" for="distance"></label>
+      <div class="col-sm-18">
+        <input type="text" class="form-control" id="distance" name="keyword" placeholder="Enter a Location">
+      </div></div> </div>
+  </div>
+
+      
+   
+    <div class="col-sm-6"><div class="row">
+    <input id="place_id" name="place_id" type="hidden">
+    <button type="button" class="btn btn-info" id="searchThis" value="Search" disabled>
+      <span class="glyphicon glyphicon-search"></span> Search
+    </button>
+    <input type="reset" value="Clear" onclick="return resetForm(this.form);">
+</div></div>
+</form>
+</fieldset></center>
+<div id="output">
+    <div id="myTable"></div>
+
+    
+
+</div>
+
+
+
+
+</body>
+</html>
